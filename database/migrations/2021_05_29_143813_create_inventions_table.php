@@ -17,7 +17,7 @@ class CreateInventionsTable extends Migration
             $table->id();
             $table->boolean('isAvailable');
             $table->String('code')->unique();
-            $table->dateTime('due_date');
+            $table->dateTime('due_date')->nullable();
             $table->foreignId('from_user_id')->constrained('users');
             $table->foreignId('to_user_id')->nullable()->constrained('users');
             $table->timestamps();
