@@ -13,7 +13,7 @@ class DropAttributeValueProductAttributeTable extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('attribute_value_product_attribute');
+      //  Schema::dropIfExists('attribute_value_product_attribute');
     }
 
     /**

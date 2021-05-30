@@ -15,10 +15,12 @@ class CreateAttributeValueProductAttributeTable extends Migration
     {
         Schema::create('attribute_value_product_attribute', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('attribute_value_id');
-            $table->foreign('attribute_value_id')->references('id')->on('attribute_values');
-            $table->unsignedInteger('product_attribute_id');
-            $table->foreign('product_attribute_id')->references('id')->on('product_attributes');
+           // $table->unsignedInteger('attribute_value_id');
+         //   $table->foreign('attribute_value_id')->references('id')->on('attribute_values');
+            $table->foreignId('attribute_value_id')->constrained('attribute_values');
+            $table->foreignId('product_attribute_id')->constrained('product_attributes');;
+//            $table->unsignedInteger('product_attribute_id');
+            //$table->foreign('product_attribute_id')->references('id')->on('product_attributes');
         });
     }
 

@@ -59,7 +59,7 @@ class OrderRepository extends BaseRepository implements OrderContract
         return $order;
     }
 
-    public function listOrders(string $order = 'id', string $sort = 'desc', array $columns = ['*'])
+    public function listOrders( $order = 'id',  $sort = 'desc', array $columns = ['*'])
     {
         return $this->all($columns, $order, $sort);
     }

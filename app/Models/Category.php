@@ -2,15 +2,15 @@
 
 namespace App\Models;
 
-//use App\Models\Product;
-//use TypiCMS\NestableTrait;
+use App\Models\Product;
+use TypiCMS\NestableTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-//    use NestableTrait;
+   use NestableTrait;
     use HasFactory;
     /**
      * @var string

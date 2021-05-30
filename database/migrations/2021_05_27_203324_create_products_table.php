@@ -26,9 +26,11 @@ class CreateProductsTable extends Migration
             $table->decimal('sale_price', 8, 2)->nullable();
             $table->boolean('status')->default(1);
             $table->boolean('featured')->default(0);
+            $table->dateTime('due_date');
             $table->timestamps();
-            $table->integer('brand_id')->index();
-            $table->foreign('brand_id')->references('id')->on('brands')->onDelete('cascade');
+            $table->foreignId('brand_id')->constrained('brands');;
+          //  $table->integer('brand_id')->index();
+         //   $table->foreign('brand_id')->references('id')->on('brands')->onDelete('cascade');
 
         });
         /*Schema::table('products', function($table)

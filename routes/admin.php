@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AttributeValueController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\LoginController;
+use App\Http\Controllers\Admin\ProductAttributeController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProductImageController;
 use App\Http\Controllers\Admin\SettingController;
@@ -82,8 +83,8 @@ Route::group(['prefix'  =>  'admin'], function () {
         });
 
         Route::group(['prefix' => 'orders'], function () {
-           Route::get('/', 'Admin\OrderController@index')->name('admin.orders.index');
-           Route::get('/{order}/show', 'Admin\OrderController@show')->name('admin.orders.show');
+           Route::get('/', [App\Http\Controllers\Admin\OrderController::class, 'index'])->name('admin.orders.index');
+           Route::get('/{order}/show', [App\Http\Controllers\Admin\OrderController::class, 'show'])->name('admin.orders.show');
         });
     });
 });
