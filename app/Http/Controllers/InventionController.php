@@ -15,7 +15,7 @@ class InventionController extends Controller
      * description="",
      *
      * tags={"Invention"},
-     * security={ {"sanctum": {} }},
+
      * @OA\RequestBody(
 
      * ),

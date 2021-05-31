@@ -18,8 +18,6 @@ class CreateOrderItemsTable extends Migration
 
             $table->bigIncrements('id');
 
-           // $table->unsignedBigInteger('order_id')->index();
-           // $table->unsignedBigInteger('product_id')->index();
             $table->unsignedInteger('quantity');
             $table->decimal('price', 20, 6);
 

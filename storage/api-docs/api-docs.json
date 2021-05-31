@@ -24,12 +24,7 @@
                             }
                         }
                     }
-                },
-                "security": [
-                    {
-                        "sanctum": []
-                    }
-                ]
+                }
             },
             "post": {
                 "tags": [
@@ -64,6 +59,94 @@
                         }
                     }
                 },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/Invention/{id}": {
+            "put": {
+                "tags": [
+                    "Invention"
+                ],
+                "summary": "update Invention",
+                "description": "",
+                "operationId": "App\\Http\\Controllers\\InventionController::update",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Invention",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": 1
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "code": {
+                                        "example": "code"
+                                    },
+                                    "isAvailable": {
+                                        "example": true
+                                    },
+                                    "due_date": {
+                                        "example": null
+                                    },
+                                    "from_user_id": {
+                                        "example": 1
+                                    },
+                                    "to_user_id": {
+                                        "example": 2
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Invention"
+                ],
+                "summary": "delete Invention",
+                "description": "",
+                "operationId": "App\\Http\\Controllers\\InventionController::destroy",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Invention",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": 1
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "",
